@@ -20,7 +20,6 @@ import java.io.IOException;
 
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.index.Index;
-import org.elasticsearch.index.analysis.AnalysisService;
 import org.elasticsearch.index.analysis.TokenFilterFactory;
 import org.elasticsearch.index.analysis.phonetic.ptBR.MetaphoneTokenFilterFactory;
 import org.elasticsearch.plugin.analysis.phonetic.ptBR.AnalysisMetaphonePlugin;
@@ -35,9 +34,9 @@ public class MetaphoneAnalysisTests extends ESTestCase {
 
     @Test
     public void testDefaultsRSLPAnalysis() throws IOException {
-        AnalysisService analysisService = createAnalysisService(new Index("test", "_na_"), Settings.EMPTY, new AnalysisMetaphonePlugin());
+        TestAnalysis analysisService = createTestAnalysis(new Index("test", "_na_"), Settings.EMPTY, new AnalysisMetaphonePlugin());
 
-        TokenFilterFactory tokenizerFactory = analysisService.tokenFilter("br_metaphone");
+        TokenFilterFactory tokenizerFactory = analysisService.tokenFilter.get("br_metaphone");
 
         MatcherAssert.assertThat(tokenizerFactory, instanceOf(MetaphoneTokenFilterFactory.class));
     }

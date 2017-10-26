@@ -32,7 +32,6 @@ import org.elasticsearch.Version;
 import org.elasticsearch.cluster.metadata.IndexMetaData;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.index.Index;
-import org.elasticsearch.index.analysis.AnalysisService;
 import org.elasticsearch.index.analysis.TokenFilterFactory;
 import org.elasticsearch.plugin.analysis.phonetic.ptBR.AnalysisMetaphonePlugin;
 import org.elasticsearch.test.ESTestCase;
@@ -51,9 +50,9 @@ public class MetaphoneTokenFilterTests extends ESTestCase {
                 .put("index.analysis.filter.myStemmer.type", "br_metaphone")
                 .build();
 
-        AnalysisService analysisService = createAnalysisService(index, settings, new AnalysisMetaphonePlugin());
+        TestAnalysis analysisService = createTestAnalysis(index, settings, new AnalysisMetaphonePlugin());
 
-        TokenFilterFactory filterFactory = analysisService.tokenFilter("br_metaphone");
+        TokenFilterFactory filterFactory = analysisService.tokenFilter.get("br_metaphone");
 
         Tokenizer tokenizer = new KeywordTokenizer();
         
@@ -82,9 +81,9 @@ public class MetaphoneTokenFilterTests extends ESTestCase {
                 .put("index.analysis.analyzer.myAnalyzer.filter", "br_metaphone")
                 .build();
 
-        AnalysisService analysisService = createAnalysisService(index, settings, new AnalysisMetaphonePlugin());
+        TestAnalysis analysisService = createTestAnalysis(index, settings, new AnalysisMetaphonePlugin());
 
-        Analyzer analyzer = analysisService.analyzer("myAnalyzer");
+        Analyzer analyzer = analysisService.indexAnalyzers.get("myAnalyzer");
         
         Map<String,List<String>> phrases = buildPhraseList();
         
