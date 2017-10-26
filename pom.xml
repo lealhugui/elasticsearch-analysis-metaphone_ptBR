@@ -3,7 +3,7 @@
   <groupId>org.elasticsearch</groupId>
   <artifactId>elasticsearch-analysis-metaphone_ptBR</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>Elasticsearch Metaphone plugin for Brazilian Portuguese</name>
   <description>Provides Brazilian Portuguese Metaphone algorithm support for Elasticsearch</description>
   <inceptionYear>2017</inceptionYear>
