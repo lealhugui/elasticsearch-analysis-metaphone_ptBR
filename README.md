@@ -31,7 +31,8 @@ This plugin includes the 'br_metaphone' token filter.
 
 Example usage:
 
-```javascript
+```bash
+curl -XPUT -H "Content-Type: application/json" http://localhost:9200/myIndex -d '
 {
   "settings": {
     "analysis": {
@@ -45,5 +46,5 @@ Example usage:
       }
     }
   }
-}
+}'
 ```
