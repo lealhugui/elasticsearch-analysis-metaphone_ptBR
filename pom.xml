@@ -5,7 +5,7 @@
 	<groupId>org.elasticsearch</groupId>
 	<artifactId>elasticsearch-analysis-metaphone_ptBR</artifactId>
 	<packaging>jar</packaging>
-	<version>7.2.0</version>
+	<version>7.3.0</version>
 	<name>Elasticsearch Metaphone plugin for Brazilian Portuguese</name>
 	<description>Provides Brazilian Portuguese Metaphone algorithm support for Elasticsearch</description>
 	<inceptionYear>2017</inceptionYear>
@@ -22,26 +22,26 @@
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
-			<version>7.2.0</version>
+			<version>7.3.0</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
-			<version>8.0.0</version>
+			<version>8.1.0</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.elasticsearch.test</groupId>
 			<artifactId>framework</artifactId>
-			<version>7.2.0</version>
+			<version>7.3.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.11.2</version>
+			<version>2.11.1</version>
 		</dependency>
 
 	</dependencies>
@@ -58,8 +58,8 @@
 						</manifest>
 						<manifestEntries>
 							<X-Build-Time>${timestamp}</X-Build-Time>
-							<X-Compile-Elasticsearch-Version>7.2.0</X-Compile-Elasticsearch-Version>
-							<X-Compile-Lucene-Version>7.3.1</X-Compile-Lucene-Version>
+							<X-Compile-Elasticsearch-Version>7.3.0</X-Compile-Elasticsearch-Version>
+							<X-Compile-Lucene-Version>8.1.0</X-Compile-Lucene-Version>
 							<X-Compile-Source-JDK>1.8</X-Compile-Source-JDK>
 							<X-Compile-Target-JDK>1.8</X-Compile-Target-JDK>
 						</manifestEntries>
