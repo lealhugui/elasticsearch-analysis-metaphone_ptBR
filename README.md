@@ -6,7 +6,7 @@ This plugin integrates the Metaphone algorithm for Brazilian Portuguese into Ela
 ## Installing
 
 ```sh
-./elasticsearch-plugin install https://github.com/Rogercf/elasticsearch-analysis-metaphone_ptBR/blob/master/dist/elasticsearch-analysis-metaphone_ptBR-7.11.2.zip
+./elasticsearch-plugin install https://github.com/lealhugui/elasticsearch-analysis-metaphone_ptBR/blob/master/dist/elasticsearch-analysis-metaphone_ptBR-7.11.2.zip
 ```
 
 ## Building from source
